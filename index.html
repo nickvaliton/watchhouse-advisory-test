@@ -1,12 +1,1429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watchhouse Advisory</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watchhouse Advisory — Visual Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS ===== */
+  :root {
+    --green: #1B3A2F;
+    --brass: #A8804A;
+    --cream: #F4EFE6;
+    --cream-soft: #FAF6EE;
+    --paper: #FFFFFF;
+    --ink: #1A1A1A;
+    --mute: #666;
+    --line: #D8D2C5;
+    --line-soft: #E8E2D5;
+    --risk-low: #5C7A6A;
+    --risk-mod: #B8893D;
+    --risk-high: #7A2E2E;
+
+    --display: 'Cormorant Garamond', Georgia, serif;
+    --body: 'EB Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #EFEAE0;
+    font-family: var(--body);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    padding: 40px 20px 80px;
+  }
+
+  /* ===== PAGE ===== */
+  .page {
+    max-width: 920px;
+    margin: 0 auto 32px;
+    background: var(--paper);
+    padding: 80px 80px 72px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+    page-break-after: always;
+  }
+  .page:last-child { margin-bottom: 0; }
+
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2, h3, p { margin: 0; padding: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    margin: 16px 0 24px;
+  }
+
+  .body-text {
+    font-family: var(--body);
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .body-italic {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .caption {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--mute);
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    margin-top: 12px;
+  }
+  .caption strong { color: var(--ink); font-weight: 500; }
+
+  .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  /* ===== RULES ===== */
+  .rule-brass {
+    border: none;
+    height: 0.5px;
+    background: var(--brass);
+    margin: 32px 0;
+  }
+  .rule-faint {
+    border: none;
+    height: 0.5px;
+    background: var(--line-soft);
+    margin: 24px 0;
+  }
+  .rule-double {
+    border: none;
+    height: 5px;
+    background:
+      linear-gradient(to bottom,
+        var(--brass) 0,
+        var(--brass) 0.5px,
+        transparent 0.5px,
+        transparent 4.5px,
+        var(--brass) 4.5px,
+        var(--brass) 5px);
+    margin: 32px 0;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    padding: 120px 80px;
+    background: var(--cream);
+    text-align: center;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .cover-top .eyebrow {
+    font-size: 10px;
+    color: var(--green);
+    opacity: 0.6;
+  }
+  .cover-middle {
+    text-align: center;
+  }
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 32px;
+  }
+  .cover-title {
+    font-family: var(--display);
+    font-size: 72px;
+    font-weight: 400;
+    color: var(--green);
+    line-height: 1;
+    letter-spacing: 0.005em;
+    margin-bottom: 16px;
+  }
+  .cover-subtitle {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--green);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+  .cover-tagline {
+    font-family: var(--body);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .cover-divider {
+    width: 80px;
+    height: 0.5px;
+    background: var(--brass);
+    margin: 32px auto;
+  }
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+  }
+  .cover-footer-block {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  /* ===== WORDMARK SAMPLES ===== */
+  .wordmark-sample {
+    background: var(--cream);
+    padding: 56px 48px;
+    margin: 0;
+  }
+  .wordmark-sample.tight {
+    padding: 36px 32px;
+  }
+
+  /* CRITICAL: locked wordmark structure — both lines share right edge */
+  .wm-stack {
+    display: inline-block;
+    text-align: left;
+  }
+  .wm-top {
+    font-family: var(--display);
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.01em;
+    line-height: 1;
+    display: block;
+  }
+  .wm-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.18em;
+  }
+  .wm-rule {
+    flex: 1;
+    height: 0.5px;
+    background: var(--brass);
+  }
+  .wm-gap {
+    flex-shrink: 0;
+  }
+  .wm-advisory {
+    font-family: var(--display);
+    font-weight: 300;
+    color: var(--green);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  /* Size variants for the wordmark */
+  .wm-xl .wm-top { font-size: 56px; }
+  .wm-xl .wm-advisory { font-size: 14px; }
+  .wm-xl .wm-gap { width: 14px; }
+
+  .wm-lg .wm-top { font-size: 44px; }
+  .wm-lg .wm-advisory { font-size: 12px; }
+  .wm-lg .wm-gap { width: 12px; }
+
+  .wm-md .wm-top { font-size: 32px; }
+  .wm-md .wm-advisory { font-size: 9px; }
+  .wm-md .wm-gap { width: 10px; }
+
+  .wm-sm .wm-top { font-size: 22px; }
+  .wm-sm .wm-advisory { font-size: 7px; }
+  .wm-sm .wm-gap { width: 8px; }
+
+  /* Inverted wordmark (on green) */
+  .wm-inverted .wm-top { color: var(--cream); }
+  .wm-inverted .wm-rule { background: var(--brass); }
+  .wm-inverted .wm-advisory { color: var(--cream); }
+
+  /* ===== LOCKUP (mark + wordmark) ===== */
+  .lockup {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .lockup .mark { flex-shrink: 0; }
+  .lockup .wm-stack { flex: 1; min-width: 0; }
+
+  /* ===== COLOR SWATCHES ===== */
+  .swatch-row {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .swatch-row.primary {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  .swatch-row.risk {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .swatch-row.support {
+    grid-template-columns: 1fr 1fr;
+  }
+  .swatch {
+    height: 140px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .swatch.small {
+    height: 100px;
+    padding: 12px;
+  }
+  .swatch-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .swatch-name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .swatch-light { border: 0.5px solid var(--line); }
+
+  /* ===== TYPOGRAPHY SPECIMEN ===== */
+  .specimen {
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--line-soft);
+  }
+  .specimen:last-child { border-bottom: none; }
+
+  .spec-display {
+    font-family: var(--display);
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--green);
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .spec-body {
+    font-family: var(--body);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .spec-accent {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .spec-accent-sub {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mute);
+    margin-top: 4px;
+  }
+
+  /* ===== APPLIED MOCKUPS ===== */
+  .mockup-card {
+    background: var(--paper);
+    border: 0.5px solid var(--line);
+    overflow: hidden;
+    margin: 0;
+  }
+
+  /* Report cover */
+  .report-cover {
+    background: var(--green);
+    color: var(--cream);
+    padding: 64px 48px;
+    min-height: 540px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .rc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .rc-confidential {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+    text-align: right;
+  }
+  .rc-confidential .sub {
+    color: var(--cream);
+    opacity: 0.6;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    margin-top: 4px;
+  }
+  .rc-middle .eyebrow {
+    color: var(--brass);
+    margin-bottom: 20px;
+  }
+  .rc-title {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--cream);
+    letter-spacing: -0.005em;
+    margin-bottom: 16px;
+  }
+  .rc-subtitle {
+    font-family: var(--body);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--cream);
+    opacity: 0.85;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+  .rc-bottom {
+    border-top: 0.5px solid var(--brass);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .rc-meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-align: right;
+    color: var(--cream);
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  /* Business card */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .bcard {
+    aspect-ratio: 1.75/1;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.5px solid var(--line);
+  }
+  .bcard-front {
+    background: var(--cream);
+  }
+  .bcard-back {
+    background: var(--paper);
+  }
+  .bcard-name {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1;
+  }
+  .bcard-title {
+    font-family: var(--body);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+  .bcard-contact {
+    border-top: 0.5px solid var(--brass);
+    padding-top: 12px;
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .bcard-contact .city {
+    color: var(--mute);
+    margin-top: 6px;
+  }
+
+  /* Web hero */
+  .web {
+    background: var(--paper);
+  }
+  .web-nav {
+    padding: 20px 32px;
+    border-bottom: 0.5px solid var(--line-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--paper);
+  }
+  .web-nav-links {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    gap: 28px;
+  }
+  .web-nav-cta { color: var(--brass); font-weight: 500; }
+  .web-hero {
+    padding: 72px 56px 80px;
+    background: var(--cream);
+  }
+  .web-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 20px;
+  }
+  .web-title {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 400;
+    color: var(--green);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .web-sub {
+    font-family: var(--body);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+  .web-cta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .web-cta-primary {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green);
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+  .web-cta-secondary {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+  }
+
+  /* Email signature */
+  .email-sig {
+    background: var(--paper);
+    padding: 32px;
+    border: 0.5px solid var(--line);
+  }
+  .email-body {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .email-body p { margin: 0 0 12px; }
+  .email-sig-block {
+    border-top: 0.5px solid var(--brass);
+    padding-top: 16px;
+  }
+  .email-sig-name {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .email-sig-name strong { font-weight: 500; }
+  .email-sig-contact {
+    color: var(--mute);
+    font-family: var(--sans);
+    font-size: 12px;
+  }
+  .email-sig-tagline {
+    color: var(--mute);
+    font-style: italic;
+    margin-top: 4px;
+    font-family: var(--body);
+    font-size: 13px;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    background: var(--paper);
+    padding: 48px;
+    border: 0.5px solid var(--line);
+  }
+  .nl-head {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 0.5px solid var(--brass);
+  }
+  .nl-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 12px;
+  }
+  .nl-title {
+    font-family: var(--display);
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--green);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    font-style: italic;
+  }
+  .nl-sub {
+    font-family: var(--body);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mute);
+    margin-top: 12px;
+  }
+  .nl-body {
+    padding-top: 32px;
+  }
+  .nl-section-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 12px;
+  }
+  .nl-article-title {
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .nl-article-body {
+    font-family: var(--body);
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* Summary box */
+  .summary-box {
+    background: var(--green);
+    color: var(--cream);
+    padding: 36px 32px;
+  }
+  .summary-body {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    font-style: italic;
+  }
+  .summary-footer {
+    margin-top: 28px;
+    border-top: 0.5px solid var(--brass);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .summary-meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  /* TOC */
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--line-soft);
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--brass);
+    letter-spacing: 0.18em;
+    width: 60px;
+    flex-shrink: 0;
+  }
+  .toc-name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--green);
+    flex: 1;
+  }
+  .toc-desc {
+    font-family: var(--body);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mute);
+    flex-shrink: 0;
+    margin-left: 24px;
+  }
+
+  /* Spacing helpers */
+  .mt-32 { margin-top: 32px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-16 { margin-top: 16px; }
+  .mb-24 { margin-bottom: 24px; }
+  .text-center { text-align: center; }
+
+  /* Print */
+  @media print {
+    body { background: white; padding: 0; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      max-width: 100%;
+      padding: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page { padding: 40px 24px; }
+    .cover { padding: 60px 32px; min-height: 600px; }
+    .cover-title { font-size: 48px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .swatch-row.primary,
+    .swatch-row.risk { grid-template-columns: 1fr; }
+    .web-hero { padding: 48px 24px; }
+    .web-title { font-size: 36px; }
+    .rc-title { font-size: 36px; }
+    .nl-title { font-size: 44px; }
+  }
+</style>
 </head>
 <body>
-  <h1>Watchhouse Advisory</h1>
-  <p>Coming soon.</p>
+
+<!-- ============================== COVER ============================== -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="cover-footer-block">
+      Watchhouse Advisory<br>
+      Boston · Massachusetts
+    </div>
+    <div class="cover-footer-block" style="text-align: right;">
+      Visual Direction<br>
+      Version 1.0 · March 2026
+    </div>
+  </div>
+
+  <div class="cover-middle">
+    <div class="cover-eyebrow">Brand Identity Document</div>
+    <div class="cover-title">Watchhouse</div>
+    <div class="cover-subtitle">Advisory</div>
+    <div class="cover-divider"></div>
+    <div class="cover-tagline">Acquisition risk, examined.</div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-block">
+      Confidential<br>
+      Internal Working Document
+    </div>
+    <div class="cover-footer-block" style="text-align: right;">
+      No. 0001<br>
+      Marketing Due Diligence
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TABLE OF CONTENTS ============================== -->
+<section class="page">
+  <div class="eyebrow">Contents</div>
+  <h1 class="section-title">What's in this document</h1>
+  <p class="body-text">This document specifies the visual identity for Watchhouse Advisory, including wordmark, mark, color palette, typography, and applied mockups. It serves as the reference for any subsequent design work, whether produced in-house or handed to an outside collaborator.</p>
+
+  <ul class="toc-list mt-32">
+    <li class="toc-item">
+      <span class="toc-num">I.</span>
+      <span class="toc-name">Wordmark</span>
+      <span class="toc-desc">Primary lockup, scales, usage rules</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">II.</span>
+      <span class="toc-name">Mark</span>
+      <span class="toc-desc">The W in double frame</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">III.</span>
+      <span class="toc-name">Color Palette</span>
+      <span class="toc-desc">Primary, accent, risk indicators</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">IV.</span>
+      <span class="toc-name">Typography</span>
+      <span class="toc-desc">Three roles, two serifs</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">V.</span>
+      <span class="toc-name">Report Cover</span>
+      <span class="toc-desc">The flagship deliverable</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VI.</span>
+      <span class="toc-name">Stationery</span>
+      <span class="toc-desc">Business card system</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VII.</span>
+      <span class="toc-name">Website</span>
+      <span class="toc-desc">Homepage hero treatment</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VIII.</span>
+      <span class="toc-name">Email Signature</span>
+      <span class="toc-desc">Daily correspondence</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">IX.</span>
+      <span class="toc-name">The Watch</span>
+      <span class="toc-desc">Newsletter masthead</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">X.</span>
+      <span class="toc-name">Summary</span>
+      <span class="toc-desc">What this adds up to</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============================== SECTION I: WORDMARK ============================== -->
+<section class="page">
+  <div class="eyebrow">I · Wordmark</div>
+  <h1 class="section-title">The Primary Lockup</h1>
+  <p class="body-text"><em>The Watchhouse Advisory wordmark is two lines, locked to a shared right edge.</em> "Watchhouse" sits in Cormorant Garamond at 400 weight. "Advisory" sits below in the same family at 300 weight, all caps, with letter-spacing at 0.32em. Both lines terminate at the same right margin. A 0.5px brass rule fills the variable space between the start of the W and the start of "Advisory," anchoring the suffix to the wordmark above.</p>
+
+  <hr class="rule-brass">
+
+  <!-- Primary lockup, large -->
+  <div class="wordmark-sample">
+    <div class="wm-stack wm-xl" style="display: inline-grid;">
+      <span class="wm-top">Watchhouse</span>
+      <div class="wm-bottom">
+        <div class="wm-rule"></div>
+        <div class="wm-gap"></div>
+        <div class="wm-advisory">Advisory</div>
+      </div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Primary lockup at full scale (56pt).</strong> Used for report covers, formal documents, the website homepage.</p>
+
+  <div class="mt-24">
+    <div class="wordmark-sample tight">
+      <div class="wm-stack wm-lg" style="display: inline-grid;">
+        <span class="wm-top">Watchhouse</span>
+        <div class="wm-bottom">
+          <div class="wm-rule"></div>
+          <div class="wm-gap"></div>
+          <div class="wm-advisory">Advisory</div>
+        </div>
+      </div>
+    </div>
+    <p class="caption text-center"><strong>Mid scale (44pt).</strong> Used for letterhead, slide masters, internal documents.</p>
+  </div>
+
+  <div class="mt-24">
+    <div class="wordmark-sample tight">
+      <div class="wm-stack wm-md" style="display: inline-grid;">
+        <span class="wm-top">Watchhouse</span>
+        <div class="wm-bottom">
+          <div class="wm-rule"></div>
+          <div class="wm-gap"></div>
+          <div class="wm-advisory">Advisory</div>
+        </div>
+      </div>
+    </div>
+    <p class="caption text-center"><strong>Navigation / signature scale (32pt).</strong> Used for website navigation, email signatures.</p>
+  </div>
+
+  <div class="mt-24">
+    <div class="wordmark-sample tight">
+      <div class="wm-stack wm-sm" style="display: inline-grid;">
+        <span class="wm-top">Watchhouse</span>
+        <div class="wm-bottom">
+          <div class="wm-rule"></div>
+          <div class="wm-gap"></div>
+          <div class="wm-advisory">Advisory</div>
+        </div>
+      </div>
+    </div>
+    <p class="caption text-center"><strong>Minimum scale (22pt).</strong> Used for business cards, document footers, the smallest acceptable application.</p>
+  </div>
+
+  <hr class="rule-faint">
+
+  <div class="eyebrow mt-32">Usage Rules</div>
+  <div class="body-text mt-16" style="margin-top: 16px;">
+    <ul style="font-family: var(--body); font-size: 16px; line-height: 1.8; padding-left: 0; list-style: none;">
+      <li style="padding: 4px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span>The wordmark may never be set without "Advisory" attached. The two are inseparable.</li>
+      <li style="padding: 4px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span>Both lines share a fixed right margin. "Advisory" never floats away from this edge.</li>
+      <li style="padding: 4px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span>The brass rule may not be replaced with another color, removed, or rendered as a solid block.</li>
+      <li style="padding: 4px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span>Minimum size is 22pt for "Watchhouse." Below this, the suffix becomes illegible.</li>
+      <li style="padding: 4px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span>The wordmark may appear in deep forest green on cream/white, or cream on deep forest green. No other color combinations are permitted.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== SECTION II: MARK ============================== -->
+<section class="page">
+  <div class="eyebrow">II · Mark</div>
+  <h1 class="section-title">The W in Double Frame</h1>
+  <p class="body-text">The mark is a singular Cormorant Garamond capital W set in a double-frame escutcheon. The outer frame is deep forest green; the inner frame is antique brass. The W is set at 700 weight — the heaviest cut available in the Cormorant family — to function as a mark rather than as letterform.</p>
+  <p class="body-text"><em>The mark may stand independently of the wordmark.</em> Used as a favicon, a report-cover seal, an embossed letterhead element, or wherever space is too constrained for the full lockup.</p>
+
+  <hr class="rule-brass">
+
+  <!-- Mark at multiple scales -->
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px;">
+    <div style="background: var(--cream); padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="120" height="120" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="1"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.5"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+      </svg>
+      <div class="label">120px · Primary</div>
+    </div>
+    <div style="background: var(--cream); padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="64" height="64" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="1.5"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.75"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+      </svg>
+      <div class="label">64px · Standard</div>
+    </div>
+    <div style="background: var(--cream); padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="40" height="40" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="2"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="1"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+      </svg>
+      <div class="label">40px · Email</div>
+    </div>
+    <div style="background: var(--cream); padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="24" height="24" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="3"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="1.5"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+      </svg>
+      <div class="label">24px · Favicon</div>
+    </div>
+  </div>
+
+  <hr class="rule-faint">
+
+  <!-- Mark inverted on green -->
+  <div class="eyebrow mt-32">Inverted Application</div>
+  <h2 class="section-title" style="font-size: 24px;">Cream on Green</h2>
+  <p class="body-text">When the mark appears on a deep-green field — as on the report cover or in the email signature footer — it inverts: cream W, brass frames.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px;">
+    <div style="background: var(--green); padding: 48px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="100" height="100" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#A8804A" stroke-width="1.25"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.5" opacity="0.6"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#F4EFE6">W</text>
+      </svg>
+      <div class="label" style="color: var(--brass); opacity: 0.85;">100px · Report seal</div>
+    </div>
+    <div style="background: var(--green); padding: 48px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="56" height="56" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#A8804A" stroke-width="1.5"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.75" opacity="0.6"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#F4EFE6">W</text>
+      </svg>
+      <div class="label" style="color: var(--brass); opacity: 0.85;">56px · Standard</div>
+    </div>
+    <div style="background: var(--green); padding: 48px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <svg width="36" height="36" viewBox="0 0 80 80">
+        <rect x="3" y="3" width="74" height="74" fill="none" stroke="#A8804A" stroke-width="2"/>
+        <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="1" opacity="0.6"/>
+        <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#F4EFE6">W</text>
+      </svg>
+      <div class="label" style="color: var(--brass); opacity: 0.85;">36px · Footer</div>
+    </div>
+  </div>
+
+  <hr class="rule-faint">
+
+  <!-- Full lockup with mark -->
+  <div class="eyebrow mt-32">Mark + Wordmark Lockup</div>
+  <h2 class="section-title" style="font-size: 24px;">Combined Application</h2>
+  <p class="body-text">When mark and wordmark appear together, the mark sits to the left of the wordmark, vertically centered.</p>
+
+  <div class="wordmark-sample mt-24" style="padding: 56px 48px;">
+    <div class="lockup">
+      <div class="mark">
+        <svg width="88" height="88" viewBox="0 0 80 80">
+          <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="1"/>
+          <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.5"/>
+          <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+        </svg>
+      </div>
+      <div class="wm-stack wm-lg" style="display: inline-grid;">
+        <span class="wm-top">Watchhouse</span>
+        <div class="wm-bottom">
+          <div class="wm-rule"></div>
+          <div class="wm-gap"></div>
+          <div class="wm-advisory">Advisory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Full lockup.</strong> Mark height aligns with wordmark height. Used for the most formal applications — report covers, letterhead, the website footer.</p>
+</section>
+
+<!-- ============================== SECTION III: COLOR ============================== -->
+<section class="page">
+  <div class="eyebrow">III · Color Palette</div>
+  <h1 class="section-title">The Forest Green Scheme</h1>
+  <p class="body-text">Three foundational colors anchor the brand: deep forest green as primary, antique brass as accent, warm cream as surface. Body text sits in near-black. Three risk-indicator colors appear only inside reports, never in the marketing system.</p>
+
+  <hr class="rule-brass">
+
+  <!-- Primary swatches -->
+  <div class="eyebrow mb-24">Primary System</div>
+  <div class="swatch-row primary">
+    <div class="swatch" style="background: var(--green); color: var(--cream);">
+      <div class="swatch-label">Primary</div>
+      <div>
+        <div class="swatch-name">Forest Green</div>
+        <div class="swatch-hex">#1B3A2F · RGB 27 58 47</div>
+      </div>
+    </div>
+    <div class="swatch" style="background: var(--brass); color: var(--cream);">
+      <div class="swatch-label" style="opacity: 0.85;">Accent</div>
+      <div>
+        <div class="swatch-name">Antique Brass</div>
+        <div class="swatch-hex" style="opacity: 0.85;">#A8804A · RGB 168 128 74</div>
+      </div>
+    </div>
+    <div class="swatch swatch-light" style="background: var(--cream); color: var(--green);">
+      <div class="swatch-label" style="color: var(--mute);">Surface</div>
+      <div>
+        <div class="swatch-name">Warm Cream</div>
+        <div class="swatch-hex" style="color: var(--mute);">#F4EFE6 · RGB 244 239 230</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support swatches -->
+  <div class="swatch-row support mt-16">
+    <div class="swatch small" style="background: var(--ink); color: var(--cream);">
+      <div class="swatch-label" style="opacity: 0.6;">Body Text</div>
+      <div>
+        <div class="swatch-name" style="font-size: 18px;">Near Black</div>
+        <div class="swatch-hex" style="opacity: 0.7;">#1A1A1A</div>
+      </div>
+    </div>
+    <div class="swatch small swatch-light" style="background: var(--paper); color: var(--green);">
+      <div class="swatch-label" style="color: var(--mute);">Paper</div>
+      <div>
+        <div class="swatch-name" style="font-size: 18px;">True White</div>
+        <div class="swatch-hex" style="color: var(--mute);">#FFFFFF</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule-faint mt-32">
+
+  <!-- Risk indicators -->
+  <div class="eyebrow mb-24">Risk Rating Indicators · Reports Only</div>
+  <div class="swatch-row risk">
+    <div class="swatch small" style="background: var(--risk-low); color: var(--paper);">
+      <div class="swatch-label" style="opacity: 0.85;">Risk: Low</div>
+      <div>
+        <div class="swatch-name" style="font-size: 18px;">Sage</div>
+        <div class="swatch-hex" style="opacity: 0.95;">#5C7A6A</div>
+      </div>
+    </div>
+    <div class="swatch small" style="background: var(--risk-mod); color: var(--paper);">
+      <div class="swatch-label" style="opacity: 0.9;">Risk: Moderate</div>
+      <div>
+        <div class="swatch-name" style="font-size: 18px;">Burnished Gold</div>
+        <div class="swatch-hex" style="opacity: 0.95;">#B8893D</div>
+      </div>
+    </div>
+    <div class="swatch small" style="background: var(--risk-high); color: var(--paper);">
+      <div class="swatch-label" style="opacity: 0.85;">Risk: High/Critical</div>
+      <div>
+        <div class="swatch-name" style="font-size: 18px;">Oxblood</div>
+        <div class="swatch-hex" style="opacity: 0.95;">#7A2E2E</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule-faint mt-32">
+
+  <div class="eyebrow mt-32">Usage Notes</div>
+  <p class="body-text mt-16" style="margin-top: 16px;"><em>Forest green</em> carries every primary application — wordmark, headers, report covers, button states. <em>Brass</em> appears sparingly as horizontal rules, accent strokes, and key emphasis. It is structural, not decorative. <em>Cream</em> is the paper of the brand — appearing as background on report covers, marketing materials, and the website hero. The three <em>risk colors</em> appear only inside reports as visual indicators on risk-rating tables. They never appear in the marketing system, on the website, or in correspondence.</p>
+</section>
+
+<!-- ============================== SECTION IV: TYPOGRAPHY ============================== -->
+<section class="page">
+  <div class="eyebrow">IV · Typography</div>
+  <h1 class="section-title">Three Roles, Two Serifs</h1>
+  <p class="body-text">The system uses two serifs (Cormorant Garamond for display, EB Garamond for body) and one sans-serif (Inter for accents and data). The combination produces the strongest old-establishment signal while remaining fully readable in long-form analytical writing.</p>
+
+  <hr class="rule-brass">
+
+  <div class="specimen">
+    <div class="label">Display · Cormorant Garamond</div>
+    <div class="spec-display mt-16">Acquisition risk,<br/>examined.</div>
+    <p class="caption">Weights 400 and 500 for display, 700 for the mark. Used for wordmark, headlines, report titles, large pull quotes.</p>
+  </div>
+
+  <div class="specimen">
+    <div class="label">Body · EB Garamond</div>
+    <div class="spec-body mt-16">The Target derives 58% of organic traffic from a single keyword cluster. Three findings warrant Critical risk ratings. Each is documented in Section 4 with supporting data and analyst notes.</div>
+    <p class="caption">Weight 400 regular, italic for emphasis and pull quotes. Used for report body copy, web body text, formal correspondence.</p>
+  </div>
+
+  <div class="specimen">
+    <div class="label">Accent · Inter</div>
+    <div class="mt-16">
+      <div class="spec-accent">Channel Concentration Risk · Section 4.2</div>
+      <div class="spec-accent-sub">Risk Rating: Moderate · Confidence: High · Source: GA4</div>
+    </div>
+    <p class="caption">Weights 400 and 500. Used for data tables, captions, eyebrow labels, navigation, footnotes, anything functional.</p>
+  </div>
+
+  <hr class="rule-faint">
+
+  <div class="eyebrow mt-32">Hierarchy</div>
+  <div class="mt-24">
+    <div style="font-family: var(--display); font-size: 56px; font-weight: 400; color: var(--green); line-height: 1.05; margin-bottom: 16px;">H1 · Section title</div>
+    <div style="font-family: var(--display); font-size: 36px; font-weight: 500; color: var(--green); line-height: 1.15; margin-bottom: 16px;">H2 · Subsection</div>
+    <div style="font-family: var(--display); font-size: 24px; font-weight: 500; color: var(--green); line-height: 1.2; margin-bottom: 16px;">H3 · Topic heading</div>
+    <div style="font-family: var(--body); font-size: 18px; font-weight: 400; color: var(--ink); line-height: 1.6; margin-bottom: 12px;">Body text in EB Garamond, 18pt. The standard reading size for report bodies and web body copy.</div>
+    <div style="font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--mute); letter-spacing: 0.01em;">Caption in Inter, 13pt. For data labels, source citations, and functional notes.</div>
+  </div>
+</section>
+
+<!-- ============================== SECTION V: REPORT COVER ============================== -->
+<section class="page">
+  <div class="eyebrow">V · Applied — Report Cover</div>
+  <h1 class="section-title">The Diligence Report</h1>
+  <p class="body-text">The report cover is the firm's most important brand application. Every flagship engagement produces one. The cover establishes the visual standard before the analysis begins.</p>
+
+  <hr class="rule-brass">
+
+  <div class="report-cover mt-24">
+    <div class="rc-top">
+      <div>
+        <svg width="56" height="56" viewBox="0 0 80 80">
+          <rect x="3" y="3" width="74" height="74" fill="none" stroke="#A8804A" stroke-width="1.25"/>
+          <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="0.5" opacity="0.6"/>
+          <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#F4EFE6">W</text>
+        </svg>
+      </div>
+      <div class="rc-confidential">
+        Confidential
+        <div class="sub">Draft · Prepared for Buyer</div>
+      </div>
+    </div>
+
+    <div class="rc-middle">
+      <div class="eyebrow">Marketing Due Diligence Report</div>
+      <div class="rc-title">Project Aurelius</div>
+      <div class="rc-subtitle">Channel sustainability, CAC accuracy, and team capability assessment.</div>
+    </div>
+
+    <div class="rc-bottom">
+      <div>
+        <div class="wm-stack wm-md wm-inverted" style="display: inline-grid;">
+          <span class="wm-top">Watchhouse</span>
+          <div class="wm-bottom">
+            <div class="wm-rule"></div>
+            <div class="wm-gap"></div>
+            <div class="wm-advisory">Advisory</div>
+          </div>
+        </div>
+      </div>
+      <div class="rc-meta">
+        March 2026<br>
+        No. 0001
+      </div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Report cover.</strong> Forest-green field. Brass-rendered mark in the top-left functions as a seal. Project codename set in display serif. Wordmark inverted in the footer.</p>
+</section>
+
+<!-- ============================== SECTION VI: STATIONERY ============================== -->
+<section class="page">
+  <div class="eyebrow">VI · Applied — Stationery</div>
+  <h1 class="section-title">Business Card</h1>
+  <p class="body-text">A two-sided card. Cream stock for the front carrying the mark and wordmark; white field on the back for contact information. Both sides share the same brass rule structure.</p>
+
+  <hr class="rule-brass">
+
+  <div class="card-grid mt-24">
+    <div class="bcard bcard-front" style="align-items: stretch;">
+      <div style="display: flex; justify-content: flex-end;">
+        <svg width="36" height="36" viewBox="0 0 80 80">
+          <rect x="3" y="3" width="74" height="74" fill="none" stroke="#1B3A2F" stroke-width="2"/>
+          <rect x="7" y="7" width="66" height="66" fill="none" stroke="#A8804A" stroke-width="1"/>
+          <text x="40" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="50" font-weight="700" fill="#1B3A2F">W</text>
+        </svg>
+      </div>
+      <div>
+        <div class="wm-stack wm-md" style="display: inline-grid;">
+          <span class="wm-top">Watchhouse</span>
+          <div class="wm-bottom">
+            <div class="wm-rule"></div>
+            <div class="wm-gap"></div>
+            <div class="wm-advisory">Advisory</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bcard bcard-back">
+      <div>
+        <div class="bcard-name">Nick Valiton</div>
+        <div class="bcard-title">Founding Principal</div>
+      </div>
+      <div class="bcard-contact">
+        nick@watchhouseadvisory.com<br>
+        +1 617 555 0182
+        <div class="city">Boston · Massachusetts</div>
+      </div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Business card, both sides.</strong> Front: cream stock with mark top-right, full wordmark anchored bottom-left. Back: white field with name, title, contact set in Inter, separated by the same brass rule.</p>
+</section>
+
+<!-- ============================== SECTION VII: WEBSITE ============================== -->
+<section class="page">
+  <div class="eyebrow">VII · Applied — Website</div>
+  <h1 class="section-title">Homepage Hero</h1>
+  <p class="body-text">Cream hero field with display-serif headline anchored left. Italic subtitle in body serif. Inter for navigation and the primary call-to-action. Brass underline on the CTA is the only color accent in the chrome.</p>
+
+  <hr class="rule-brass">
+
+  <div class="web mt-24" style="border: 0.5px solid var(--line);">
+    <div class="web-nav">
+      <div>
+        <div class="wm-stack wm-sm" style="display: inline-grid;">
+          <span class="wm-top">Watchhouse</span>
+          <div class="wm-bottom">
+            <div class="wm-rule"></div>
+            <div class="wm-gap"></div>
+            <div class="wm-advisory">Advisory</div>
+          </div>
+        </div>
+      </div>
+      <div class="web-nav-links">
+        <span>Services</span>
+        <span>About</span>
+        <span>The Watch</span>
+        <span class="web-nav-cta">Contact</span>
+      </div>
+    </div>
+    <div class="web-hero">
+      <div class="web-eyebrow">Marketing Due Diligence · Middle-Market Acquisitions</div>
+      <div class="web-title">Acquisition risk,<br/>examined.</div>
+      <div class="web-sub">Independent assessment of customer acquisition risk for private equity sponsors, search funds, and strategic acquirers operating in the $10M–$100M deal range.</div>
+      <div class="web-cta">
+        <span class="web-cta-primary">Request a Risk Scan →</span>
+        <span class="web-cta-secondary">Read the methodology</span>
+      </div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Homepage hero.</strong> The wordmark in the navigation uses the same right-aligned structure as the primary lockup, scaled down to fit. No hero image. No animation. The typography carries the entire visual hierarchy.</p>
+</section>
+
+<!-- ============================== SECTION VIII: EMAIL ============================== -->
+<section class="page">
+  <div class="eyebrow">VIII · Applied — Email Signature</div>
+  <h1 class="section-title">Correspondence</h1>
+  <p class="body-text">The email signature appears at the bottom of every email sent on firm business. It carries the wordmark once, the contact information, and the tagline as a printer's-mark closing.</p>
+
+  <hr class="rule-brass">
+
+  <div class="email-sig mt-24">
+    <div class="email-body">
+      <p>Best,</p>
+      <p>Nick</p>
+    </div>
+    <div class="email-sig-block">
+      <div style="margin-bottom: 12px;">
+        <div class="wm-stack wm-md" style="display: inline-grid;">
+          <span class="wm-top">Watchhouse</span>
+          <div class="wm-bottom">
+            <div class="wm-rule"></div>
+            <div class="wm-gap"></div>
+            <div class="wm-advisory">Advisory</div>
+          </div>
+        </div>
+      </div>
+      <div class="email-sig-name"><strong>Nick Valiton</strong> · Founding Principal</div>
+      <div class="email-sig-contact">nick@watchhouseadvisory.com · 617.555.0182</div>
+      <div class="email-sig-tagline">Acquisition risk, examined.</div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>Email signature.</strong> Brass rule separates the message from the signature block. Wordmark appears once, scaled to navigation size. The tagline sits below in italic body serif as a quiet closing mark.</p>
+</section>
+
+<!-- ============================== SECTION IX: NEWSLETTER ============================== -->
+<section class="page">
+  <div class="eyebrow">IX · Applied — The Watch</div>
+  <h1 class="section-title">Newsletter Masthead</h1>
+  <p class="body-text"><em>The Watch is the one place where editorial branding earns its keep.</em> The newsletter masthead operates like a small periodical, with the italic Cormorant display serif setting the title and a brass rule grounding the composition.</p>
+
+  <hr class="rule-brass">
+
+  <div class="newsletter mt-24">
+    <div class="nl-head">
+      <div class="nl-eyebrow">From Watchhouse Advisory · Issue No. 003</div>
+      <div class="nl-title">The Watch</div>
+      <div class="nl-sub">Notes on customer acquisition risk in middle-market acquisitions · March 2026</div>
+    </div>
+    <div class="nl-body">
+      <div class="nl-section-label">In This Issue</div>
+      <div class="nl-article-title">Why three out of five PE marketing diligence findings concern channel concentration.</div>
+      <div class="nl-article-body">An analysis of 47 middle-market diligence engagements completed in the trailing twelve months. The pattern is consistent enough to warrant a structured framework, included below.</div>
+    </div>
+  </div>
+  <p class="caption text-center"><strong>The Watch.</strong> Italic display serif for the masthead. Brass rule and centered typography echo university press monthlies (Harvard Business Review, Foreign Affairs, The Atlantic) without imitating any specifically.</p>
+</section>
+
+<!-- ============================== SECTION X: SUMMARY ============================== -->
+<section class="page">
+  <div class="eyebrow">X · Summary</div>
+  <h1 class="section-title">What This Adds Up To</h1>
+
+  <div class="summary-box mt-24">
+    <div class="summary-body">A firm that could have been founded in 1923, operating in 2026 with modern tools. Restrained, scholarly, serious without solemnity. Built around a single discipline. The visual world reinforces the institutional voice: nothing is hurried, nothing is loud, and every element does work.</div>
+    <div class="summary-footer">
+      <div>
+        <div class="wm-stack wm-md wm-inverted" style="display: inline-grid;">
+          <span class="wm-top">Watchhouse</span>
+          <div class="wm-bottom">
+            <div class="wm-rule"></div>
+            <div class="wm-gap"></div>
+            <div class="wm-advisory">Advisory</div>
+          </div>
+        </div>
+      </div>
+      <div class="summary-meta">Visual Direction · V1 · Internal</div>
+    </div>
+  </div>
+
+  <hr class="rule-faint mt-32">
+
+  <div class="eyebrow mt-32">Brand Principles</div>
+  <div style="font-family: var(--body); font-size: 16px; line-height: 1.8; padding-left: 0; list-style: none; margin-top: 16px;">
+    <div style="padding: 6px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span><em>Restraint signals confidence.</em> The firms that need to over-design are the firms without institutional weight. Watchhouse Advisory's substance comes from operating as if it doesn't need to perform anything.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span><em>The right edge is sacred.</em> The wordmark's right margin is the brand's structural commitment. It is never broken.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span><em>The brass rule is structural, not decorative.</em> Every appearance of brass does work — separating, anchoring, measuring. It is the brand's punctuation.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span><em>Serif typography carries the institutional voice.</em> No sans-serif appears in display contexts. The brand reads the way old academic publishing reads.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--brass); margin-right: 12px;">·</span><em>The firm operates behind the work.</em> No founders pictured. No personalities promoted. The work product is the brand's voice.</div>
+  </div>
+
+  <hr class="rule-double mt-32">
+
+  <div class="text-center mt-32">
+    <div class="cover-tagline" style="margin-bottom: 24px;">Acquisition risk, examined.</div>
+    <div class="cover-footer-block" style="opacity: 0.7;">
+      End of Visual Direction Document<br>
+      Version 1.0 · March 2026
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
